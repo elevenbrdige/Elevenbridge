@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevenbridge | Global Intelligence & Data</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f4f4f4; color: #000; }
+        
+        /* تأثيرات بلومبيرج الاحترافية */
+        .bb-blue { color: #0000ff; }
+        .bg-bb-blue { background-color: #0000ff; }
+        .border-bb { border-bottom: 1px solid #e5e5e5; }
+        .logo-font { font-size: 20px; font-weight: 900; letter-spacing: -0.03em; text-transform: uppercase; font-style: italic; }
+        
+        /* القائمة الجانبية */
+        #side-menu { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 1000; }
+        .menu-closed { transform: translateX(-100%); }
+        .dropdown-content { transition: max-height 0.3s ease-out; overflow: hidden; max-height: 0; }
+        .dropdown-open { max-height: 300px; }
+
+        /* شريط الأخبار المتحرك (Ticker) */
+        .ticker-wrapper { overflow: hidden; background: #000; color: #fff; padding: 4px 0; font-size: 10px; font-weight: bold; text-transform: uppercase; }
+        .ticker-move { display: flex; animation: ticker 30s linear infinite; white-space: nowrap; }
+        @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+    </style>
+</head>
+<body class="bg-white">
+
+    <div class="ticker-wrapper border-b border-gray-800">
+        <div class="ticker-move gap-10">
+            <span>• ELEVENBRIDGE TERMINAL v2.6 ACTIVE</span>
+            <span class="text-green-500">• REAL ESTATE NYC +2.4%</span>
+            <span class="text-red-500">• AI STARTUPS FUNDING -1.2%</span>
+            <span>• 12 LANGUAGES CONNECTED</span>
+            <span class="text-green-500">• BTC/USD $64,230</span>
+            <span>• GLOBAL DATA SCRAPING IN PROGRESS...</span>
+        </div>
+    </div>
+
+    <header class="sticky top-0 bg-white z-[100] border-b-[6px] border-black px-4 py-2 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+            <button onclick="toggleMenu()" class="flex flex-col gap-1 pr-3 border-r border-gray-200">
+                <span class="w-5 h-0.5 bg-black"></span>
+                <span class="w-5 h-0.5 bg-black"></span>
+                <span class="w-5 h-0.5 bg-black"></span>
+            </button>
+            <div class="logo-font">ELEVEN<span class="bb-blue">BRIDGE</span></div>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <div id="google_translate_element" class="hidden md:block scale-75"></div>
+            <button class="bg-black text-white px-4 py-1.5 text-[11px] font-black uppercase rounded-sm hover:bg-bb-blue transition">Subscribe</button>
+            <button onclick="toggleUserMenu()" class="relative">
+                <i class="fa-regular fa-user text-sm"></i>
+                <div id="user-dropdown" class="hidden absolute right-0 mt-4 w-48 bg-white border border-gray-200 shadow-2xl py-2 text-[10px] font-bold uppercase text-left">
+                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 border-b border-gray-50">Profile</a>
+                    <a href="#" class="block px-4 py-2 hover:bg-gray-100">Settings</a>
+                </div>
+            </button>
+        </div>
+    </header>
+
+    <div id="side-menu" class="fixed inset-y-0 left-0 w-80 bg-black text-white p-8 menu-closed">
+        <div class="flex justify-between items-center mb-12">
+            <div class="text-[10px] font-black tracking-widest text-gray-500 uppercase">Elevenbridge Menu</div>
+            <button onclick="toggleMenu()" class="text-2xl text-gray-500 hover:text-white">&times;</button>
+        </div>
+        <nav class="space-y-4">
+            <div>
+                <button onclick="toggleAccordion('m-drop')" class="flex justify-between w-full text-sm font-bold uppercase py-2 border-b border-gray-900 hover:text-bb-blue">
+                    Markets <i class="fa-solid fa-chevron-down text-[9px] mt-1"></i>
+                </button>
+                <div id="m-drop" class="dropdown-content pl-4 space-y-3 pt-3 text-xs text-gray-400">
+                    <a href="#" class="block hover:text-white">Stock Markets</a>
+                    <a href="#" class="block hover:text-white">Real Estate Data</a>
+                </div>
+            </div>
+            <a href="#" class="block text-sm font-bold uppercase py-2 border-b border-gray-900 hover:text-bb-blue">Technology</a>
+            <a href="#" class="block text-sm font-bold uppercase py-2 border-b border-gray-900 hover:text-bb-blue">Politics</a>
+        </nav>
+        <div class="mt-20 flex gap-6 text-lg text-gray-600">
+            <a href="#" class="hover:text-white"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="hover:text-white"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" class="hover:text-white"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+    </div>
+
+    <main class="max-w-[1400px] mx-auto p-4 md:p-8">
+        
+        <div class="bg-red-50 border-l-4 border-red-600 p-3 mb-8 flex justify-between items-center">
+            <p class="text-[11px] font-bold text-red-700 uppercase"> <span class="bg-red-600 text-white px-2 py-0.5 mr-2">Breaking</span> Global market gap in AI-Driven SaaS startups identified.</p>
+            <i class="fa-solid fa-arrow-right text-xs text-red-600"></i>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <div class="lg:col-span-8">
+                <div class="relative group cursor-pointer overflow-hidden border-b-2 border-black pb-6">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200" class="w-full h-[450px] object-cover grayscale group-hover:grayscale-0 transition duration-1000">
+                    <div class="mt-6">
+                        <h3 class="text-xs font-black text-bb-blue uppercase tracking-widest mb-2 italic">Intelligence Report</h3>
+                        <h2 class="text-4xl md:text-6xl font-black leading-[0.9] tracking-tighter mb-4">THE GLOBAL SHIFT: HOW DATA SCRAPING REVEALS MARKET VULNERABILITIES.</h2>
+                        <p class="text-lg text-gray-700 font-medium leading-tight">Expert analysis across 12 languages identifies the next structural gaps in the real estate and tech sectors.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                    <div class="border-t border-gray-200 pt-4">
+                        <h4 class="text-xs font-black uppercase mb-1">Technology</h4>
+                        <h3 class="text-xl font-bold leading-none tracking-tight hover:text-bb-blue cursor-pointer uppercase">AI Agents take over 40% of Slack-based engineering tasks.</h3>
+                    </div>
+                    <div class="border-t border-gray-200 pt-4">
+                        <h4 class="text-xs font-black uppercase mb-1">Real Estate</h4>
+                        <h3 class="text-xl font-bold leading-none tracking-tight hover:text-bb-blue cursor-pointer uppercase">Dubai property market data suggests 2026 surge.</h3>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="lg:col-span-4 space-y-8">
+                
+                <div class="bg-black text-white p-8 border-t-8 border-bb-blue shadow-xl">
+                    <h3 class="text-3xl font-black italic tracking-tighter mb-2">THE TERMINAL</h3>
+                    <p class="text-[10px] text-gray-500 font-bold uppercase tracking-[0.2em] mb-6">Professional Intelligence</p>
+                    <p class="text-sm italic text-gray-300 mb-8 leading-snug">Get the data that determines the future of your investments.</p>
+                    <form class="space-y-4">
+                        <input type="email" placeholder="EMAIL ADDRESS" class="w-full bg-gray-900 border border-gray-800 p-4 text-xs font-bold focus:border-bb-blue outline-none">
+                        <button class="w-full bg-bb-blue text-white py-4 text-xs font-black uppercase tracking-widest hover:bg-white hover:text-black transition">Join Now</button>
+                    </form>
+                </div>
+
+                <div class="border-t-4 border-black pt-4">
+                    <h2 class="text-xs font-black uppercase tracking-widest mb-6 border-b border-gray-100 pb-2">Most Read</h2>
+                    <div class="space-y-6">
+                        <div class="flex gap-4 group cursor-pointer">
+                            <span class="text-3xl font-black text-gray-200 group-hover:text-bb-blue">01</span>
+                            <p class="text-sm font-bold leading-tight uppercase">Why the 12-language strategy is winning in SEO.</p>
+                        </div>
+                        <div class="flex gap-4 group cursor-pointer">
+                            <span class="text-3xl font-black text-gray-200 group-hover:text-bb-blue">02</span>
+                            <p class="text-sm font-bold leading-tight uppercase">Kickstarter Data: What successful founders know.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+    </main>
+
+    <footer class="bg-black text-white mt-20 py-16 px-8 border-t-[12px] border-bb-blue">
+        <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-end gap-10">
+            <div>
+                <div class="logo-font text-3xl mb-4">ELEVENBRIDGE</div>
+                <p class="text-[9px] text-gray-600 font-bold uppercase tracking-[0.4em]">© 2026 GLOBAL INTELLIGENCE SYSTEMS</p>
+            </div>
+            <div class="flex gap-8 text-[10px] font-black uppercase tracking-widest">
+                <a href="#" class="hover:text-bb-blue">Privacy</a>
+                <a href="#" class="hover:text-bb-blue">Data Policy</a>
+                <a href="#" class="hover:text-bb-blue">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('side-menu').classList.toggle('menu-closed');
+        }
+        function toggleAccordion(id) {
+            document.getElementById(id).classList.toggle('dropdown-open');
+        }
+        function toggleUserMenu() {
+            document.getElementById('user-dropdown').classList.toggle('hidden');
+        }
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
