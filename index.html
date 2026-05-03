@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevenbridge | Intelligence Terminal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
+        .bb-border { border-bottom: 8px solid #000; }
+        .bg-bb-blue { background-color: #0000ff; }
+        .text-bb-blue { color: #0000ff; }
+        /* لإخفاء شريط جوجل العلوي بعد الترجمة */
+        .goog-te-banner-frame { display: none !important; }
+        body { top: 0 !important; }
+    </style>
+</head>
+<body>
+
+    <div class="bg-black text-white px-6 py-2 flex justify-between items-center">
+        <div class="text-[10px] font-black tracking-widest uppercase">Global Markets Intelligence</div>
+        <div id="google_translate_element"></div>
+    </div>
+
+    <header class="bb-border px-6 py-10">
+        <h1 class="text-7xl md:text-8xl font-[900] tracking-tighter uppercase italic leading-none">
+            ELEVEN<span class="text-bb-blue">BRIDGE</span>
+        </h1>
+    </header>
+
+    <main class="max-w-7xl mx-auto p-6 grid grid-cols-1 md:grid-cols-12 gap-12">
+        
+        <div class="md:col-span-8">
+            <div class="mb-10 group cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop" 
+                     class="w-full h-[500px] object-cover grayscale hover:grayscale-0 transition duration-700 mb-6 border border-gray-200 shadow-sm" alt="Finance">
+                <h2 class="text-5xl font-[900] leading-none tracking-tighter mb-4 group-hover:text-bb-blue transition">
+                    Strategic Market Analysis: Identifying Structural Gaps in 12 Global Economies.
+                </h2>
+                <p class="text-xl text-gray-700 leading-snug">
+                    Detailed intelligence on how data scraping and AI architectures are redefining real estate investments and startup opportunities.
+                </p>
+            </div>
+        </div>
+
+        <aside class="md:col-span-4 space-y-10">
+            
+            <div class="bg-black text-white p-8 border-t-4 border-bb-blue shadow-2xl">
+                <h3 class="text-3xl font-black leading-none mb-2 tracking-tighter uppercase italic">The Terminal</h3>
+                <p class="text-xs text-gray-400 font-bold uppercase tracking-widest mb-6 border-b border-gray-800 pb-2">Intelligence for the top 1%</p>
+                
+                <p class="text-sm text-gray-300 mb-6 italic leading-tight">
+                    Join 5,000+ investors and founders. Get daily insights on market gaps and technical documentation updates.
+                </p>
+                
+                <form action="YOUR_BEEHIIV_OR_EMAIL_LINK" method="POST" class="space-y-4">
+                    <input type="email" placeholder="EMAIL ADDRESS" 
+                           class="w-full bg-gray-900 border border-gray-700 p-3 text-xs font-bold text-white outline-none focus:border-bb-blue transition">
+                    <button type="submit" 
+                            class="w-full bg-bb-blue text-white py-3 text-xs font-black uppercase tracking-[0.2em] hover:bg-white hover:text-black transition duration-300">
+                        Join the Bridge
+                    </button>
+                </form>
+            </div>
+
+            <div class="border-4 border-bb-blue p-5 group cursor-pointer">
+                <span class="text-[10px] font-black text-bb-blue uppercase">Flash Report</span>
+                <a href="YOUR_MONETAG_LINK" class="block mt-2">
+                    <h4 class="text-lg font-black leading-none group-hover:underline uppercase tracking-tighter">Access Real-Time Property Data for NYC & Dubai.</h4>
+                    <p class="text-xs text-gray-500 mt-2">Click to view full dataset →</p>
+                </a>
+            </div>
+
+        </aside>
+    </main>
+
+    <footer class="bg-black text-gray-600 py-12 px-6 mt-20 border-t-4 border-bb-blue">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center font-bold text-[10px] uppercase tracking-[0.3em]">
+            <div>ELEVENBRIDGE © 2026</div>
+            <div class="flex gap-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white">Privacy</a>
+                <a href="#" class="hover:text-white">Terms</a>
+                <a href="#" class="hover:text-white">Data Analysis</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
+.
